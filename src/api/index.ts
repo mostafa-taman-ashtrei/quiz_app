@@ -1,11 +1,11 @@
 import axios from 'axios';
-import { Question, QuestionsState } from '../types/questionTypes';
+import { Difficulty, Question, QuestionsState } from '../types/questionTypes';
 
 import { shuffleArray } from '../utils/shffle_array';
 
 const fetchQuestions = async (
     count: number,
-    difficulty: string,
+    difficulty: Difficulty,
     category: number,
     random: boolean,
 ): Promise<QuestionsState[]> => {
@@ -16,9 +16,8 @@ const fetchQuestions = async (
 
     try {
         const res = await axios.get(url);
-        console.log(res.data);
 
-        const finalData = res.data.results.map((q: Question) => ({
+        const finalData: QuestionsState[] = res.data.results.map((q: Question) => ({
             ...q,
             answers: shuffleArray([...q.incorrect_answers, q.correct_answer]),
         }));
