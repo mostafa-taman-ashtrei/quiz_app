@@ -1,6 +1,6 @@
 export interface AnswerType {
     question: string,
-    ans: string,
+    ans: string, // user Answer
     correct: boolean,
-    ca: string,
+    ca: string, // correct Answer
 }

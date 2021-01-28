@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import fetchQuestions from './api';
 
 import getCategories from './api/getCategories';
+import AnswerCard from './components/answers';
 import QuestionCard from './components/question';
 import useLocalStorage from './hooks/useLocalStorage';
 import { AnswerType } from './types/answerType';
@@ -17,6 +18,7 @@ const App: React.FC = () => {
     const [qindex, setQindex] = useState<number>(0);
     const [userAnswers, setUserAnswers] = useLocalStorage<AnswerType[]>('UserAnswers', []);
     const [score, setScore] = useLocalStorage<number>('Score', 0);
+    const [showAns, setShowAns] = useState<Boolean>(false);
 
     const questionNum: number = qindex + 1;
 
@@ -98,6 +100,9 @@ const App: React.FC = () => {
                         </div>
                     ))
             }
+            <hr />
+            <button type="button" onClick={() => setShowAns(!showAns)}>Show detailed answers</button>
+            { showAns ? <AnswerCard answers={userAnswers} /> : null}
         </>
     );
 };
