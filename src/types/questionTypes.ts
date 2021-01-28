@@ -1,4 +1,11 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
+export enum Difficulty {
+    EASY = 'easy',
+    MEDIUM = 'medium',
+    HARD = 'hard',
+}
+
 export interface Question {
     category: string,
     correct_answer: string,
