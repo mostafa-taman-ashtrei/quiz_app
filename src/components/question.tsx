@@ -1,5 +1,6 @@
 import React from 'react';
 import { QuestionsState } from '../types/questionTypes';
+import generateId from '../utils/uuid';
 
 interface props {
     question: QuestionsState;
@@ -27,6 +28,7 @@ const QuestionCard: React.FC<props> = ({
                 <button
                     type="button"
                     onClick={() => handleAns(a, question.correct_answer)}
+                    key={generateId(8)}
                 >
                     {a}
                 </button>

@@ -8,6 +8,7 @@ import useLocalStorage from './hooks/useLocalStorage';
 import { AnswerType } from './types/answerType';
 import { Category } from './types/categoryTypes';
 import { Difficulty, QuestionsState } from './types/questionTypes';
+import generateId from './utils/uuid';
 
 const Q_COUNT: number = 5;
 
@@ -88,6 +89,7 @@ const App: React.FC = () => {
                                 Qcount={Q_COUNT}
                                 handleAns={handleAnswer}
                                 question={questions[qindex]}
+                                key={generateId(8)}
                             />
                         </>
                     )
