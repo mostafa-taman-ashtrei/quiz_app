@@ -1,6 +1,48 @@
-# Getting Started with Create React App
+# Neo Quiz
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a quiz app that allows the user to answer a number of question in several topics and the app will keep track of the user's score & answers
+
+## Getting Started
+
+These instructions will get the project up and running on your local machine for development 
+
+### Languages and Tools Used:
+
+- <img  alt="Visual Studio Code" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png" /> vs code
+
+
+- <img   alt="Typescript" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/typescript/typescript.png" /> Typescript
+
+
+
+
+- <img   alt="Node.js" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/nodejs/nodejs.png" /> Nodejs
+
+- <img   alt="Git" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/react/react.png" /> React
+
+
+- <img   alt="Git" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png" /> Git
+
+- <img   alt="Git" width="26px" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/tailwind/tailwind.png" /> Tailwind
+
+<br />
+
+
+## Installation
+- clone the project using git or download zip
+```bash
+git clone https://github.com/neoScriptscode/quiz_app.git
+```
+- run 
+```bash
+cd quiz_app
+```
+
+```bash
+npm i
+```
+<br />
+
 
 ## Available Scripts
 
@@ -14,10 +56,13 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+### `npm lint`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Runs the eslint cli & tells you all the problems in your code 
+you can auto fix these problems by running
+```bash
+npm run lint:fix
+```
 
 ### `npm run build`
 
@@ -39,8 +84,5 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## License
+This project is licensed under the MIT License 
