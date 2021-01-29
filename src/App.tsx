@@ -9,6 +9,9 @@ import { AnswerType } from './types/answerType';
 import { Category } from './types/categoryTypes';
 import { Difficulty, QuestionsState } from './types/questionTypes';
 import generateId from './utils/uuid';
+import Loading from './components/loading';
+import Header from './components/header';
+import CategoryCard from './components/category';
 
 const Q_COUNT: number = 5;
 
@@ -19,9 +22,6 @@ const App: React.FC = () => {
     const [qindex, setQindex] = useState<number>(0);
     const [userAnswers, setUserAnswers] = useLocalStorage<AnswerType[]>('UserAnswers', []);
     const [score, setScore] = useLocalStorage<number>('Score', 0);
-    const [showAns, setShowAns] = useState<Boolean>(false);
-
-    const questionNum: number = qindex + 1;
 
     const getData = async () => {
         const data = await getCategories();
@@ -39,7 +39,7 @@ const App: React.FC = () => {
     };
 
     const handleNext = () => {
-        console.log(userAnswers);
+        const questionNum: number = qindex + 1;
 
         if (questionNum === Q_COUNT) {
             setQuestions([]);
@@ -71,15 +71,11 @@ const App: React.FC = () => {
         handleNext();
     };
 
-    if (loading) return <h1>Loading ....</h1>;
+    if (loading) return <Loading />;
 
     return (
-        <>
-            <h1>NeoQuiz</h1>
-            <h3>
-                Score:
-                <span>{score > 0 ? score : null}</span>
-            </h3>
+        <div className="bg-gray-800 h-full h-screen w-full">
+            <Header score={score} />
             {
                 questions.length > 0
                     ? (
@@ -94,18 +90,15 @@ const App: React.FC = () => {
                         </>
                     )
 
-                    : cat.map((c: Category) => (
-                        <div key={c.id} style={{ display: 'flex', flexDirection: 'column' }}>
-                            <button type="button" onClick={() => displayquestions(c.id)}>
-                                {c.name}
-                            </button>
-                        </div>
-                    ))
+                    : (
+                        <>
+                            <CategoryCard cat={cat} clickHandler={displayquestions} />
+                            <hr />
+                            <AnswerCard answers={userAnswers} />
+                        </>
+                    )
             }
-            <hr />
-            <button type="button" onClick={() => setShowAns(!showAns)}>Show detailed answers</button>
-            { showAns ? <AnswerCard answers={userAnswers} /> : null}
-        </>
+        </div>
     );
 };
 
