@@ -74,7 +74,7 @@ const App: React.FC = () => {
     if (loading) return <Loading />;
 
     return (
-        <div className="bg-gray-800 h-full h-screen w-full">
+        <div className="bg-gray-800 h-full w-full">
             <Header score={score} />
             {
                 questions.length > 0

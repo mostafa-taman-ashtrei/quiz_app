@@ -13,10 +13,10 @@ interface props {
 const QuestionCard: React.FC<props> = ({
     question, qindex, Qcount, handleAns,
 }: props) => (
-    <div className="w-5/6 mx-auto sm:px-6 lg:px-8 bg-gray-800 p-5">
-        <div className="py-10">
+    <div className="w-5/6 mx-auto pt-4 h-screen bg-gray-800">
+        <div className="py-0">
             <div className="max-w-md mx-auto xl:max-w-5xl lg:max-w-5xl md:max-w-2xl bg-gray-700 max-h-screen shadow-2xl flex-row rounded relative">
-                <div className="p-2 bg-gray-600 text-blue-900 rounded-t">
+                <div className="bg-gray-600 text-blue-900 rounded-t">
 
                     <h5 className="text-white text-2xl capitalize">
                         {question.category}
@@ -31,7 +31,7 @@ const QuestionCard: React.FC<props> = ({
                         {Qcount}
                     </h3>
                 </div>
-                <div className="p-2 w-full h-full overflow-y-auto text-gray-100">
+                <div className="w-full h-full overflow-y-auto text-gray-100">
                     <p className="text-justify py-2">
                         {question.question}
                     </p>

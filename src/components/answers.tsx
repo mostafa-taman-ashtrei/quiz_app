@@ -9,7 +9,7 @@ interface props {
 const AnswerCard: React.FC<props> = ({ answers }: props) => {
     console.log(answers);
     return (
-        <div>
+        <div className="h-screen">
             <h2 className="text-black text-2xl capitalize text-center m-1 text-white">
                 You answerd
                 {' '}
